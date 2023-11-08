@@ -2,8 +2,19 @@ import cv2
 import numpy as np
 
 def filtrar(nombre):
-    imagen = cv2.imread(nombre)
+    """
+    Aplica un filtro a una imagen y devuelve una nueva imagen filtrada.
 
+    Args:
+        nombre (str): El nombre del archivo de imagen de entrada.
+
+    Returns:
+        numpy.ndarray: Una imagen filtrada representada como un arreglo numpy en formato RGBA.
+
+    Ejemplo:
+        >>> arreglo = filtrar("11838.jpg")
+    """
+    imagen = cv2.imread(nombre)
     ceros = np.array([80, 60, 60], dtype=np.uint8)
     limite = 0.95
     mask1 = np.all(imagen < ceros, axis=-1)
