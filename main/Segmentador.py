@@ -4,7 +4,6 @@ import sys
 import Filtro
 
 def indiceDeCobertura(arreglo):
-    ramaSegmentador
     alfa=arreglo[...,3]
     total=np.sum(alfa>0)
     nubes=np.sum(np.all(arreglo[:,:,:4]==[255,255,255,255],axis=2))
