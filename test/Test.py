@@ -16,7 +16,6 @@ class TestProgramas(unittest.TestCase):
     def test_filtrar_con_nombre_incorrecto(self):
         arreglo = Filtro.filtrar("imagen_que_no_existe.jpg")
         self.assertIsNone(arreglo)
-
    
     def test_indice_de_cobertura(self):
         imagen = np.zeros((100, 100, 4), dtype=np.uint8)
