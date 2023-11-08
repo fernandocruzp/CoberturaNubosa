@@ -16,7 +16,6 @@ def indiceDeCobertura(arreglo):
     alfa=arreglo[...,3]
     total=np.sum(alfa>0)
     nubes=np.sum(np.all(arreglo[:,:,:4]==[255,255,255,255],axis=2))
-    print(total,nubes)
     return float(nubes/total)
 
 if __name__ == "__main__":
@@ -26,7 +25,7 @@ if __name__ == "__main__":
 
     archivo_entrada = sys.argv[1]
     arreglo=Filtro.filtrar(archivo_entrada)
-    if arreglo == None:
+    if arreglo is None:
         sys.exit(1)
     indice=indiceDeCobertura(arreglo)
     print("CCI: ", indice)
