@@ -26,8 +26,10 @@ if __name__ == "__main__":
 
     archivo_entrada = sys.argv[1]
     arreglo=Filtro.filtrar(archivo_entrada)
+    if arreglo == None:
+        sys.exit(1)
     indice=indiceDeCobertura(arreglo)
     print("CCI: ", indice)
     if len(sys.argv) == 3 and sys.argv[2].lower() == "s":
-        archivo_salida = f"{archivo_entrada}-seg.png"
+        archivo_salida = f"{archivo_entrada[:-4]}-seg.png"
         cv2.imwrite(archivo_salida, arreglo)
